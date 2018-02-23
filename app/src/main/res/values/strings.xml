@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ScoreKeeperApp</string>
+    <string name="title">Scrabble Score</string>
+    <string name="player1">Player 1</string>
+    <string name="player2">Player 2</string>
+    <string name="score">0</string>
+    <string name="enter_score">Enter Score</string>
+    <string name ="reset">Reset</string>
+    <string name="dictionary">Look up a word</string>
+    <string name="tile_text_entry">Number of tiles used</string>
+    <string name="tiles_left">86</string>
+    <string name="tiles_left_heading">Remaining Tiles</string>
+    <string name="turn">Player One\'s Turn</string>
+    <string name="submit">Enter</string>
+    <string name="pass">Pass</string>
+    <string name="increment">+</string>
+    <string name="decrement">-</string>
+</resources>
