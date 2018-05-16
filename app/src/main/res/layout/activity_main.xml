@@ -12,21 +12,18 @@
         android:layout_height="match_parent"
         android:background="@color/primaryDarkColor">
 
-        <TextView
+        <ImageView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin"
-            android:gravity="center"
-            android:text="@string/title"
-            android:textColor="@color/primaryTextColor"
-            android:textSize="@dimen/text_size" />
+            android:gravity="fill_horizontal"
+            android:src="@drawable/scrabble" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:layout_below="@id/title"
-            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginBottom="@dimen/padding"
             android:background="@color/secondaryColor" />
 
         <LinearLayout
@@ -34,7 +31,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
-            android:layout_margin="15dp">
+            android:layout_margin="15dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
             <LinearLayout
                 android:id="@+id/player_one_layout"
@@ -143,7 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/remaining_tiles"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
 
             <EditText
@@ -153,7 +152,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint="@string/enter_score"
-                android:inputType="number"
+                android:inputType="text"
                 android:textColor="@color/primaryTextColor"
                 android:textColorHint="@color/primaryTextColor"
                 android:textSize="@dimen/text_size" />
@@ -170,6 +169,74 @@
                 android:textColorHint="@color/primaryTextColor"
                 android:textSize="@dimen/text_size" />
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/special_score_boxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_below="@+id/score_entry_layout">
+            <CheckBox
+                android:id="@+id/triple_word"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/text_style"
+                android:layout_marginBottom="@dimen/margin"
+                android:buttonTint="@color/primaryTextColor"
+                android:text="@string/triple_word"/>
+            <CheckBox
+                android:id="@+id/double_word"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/text_style"
+                android:layout_marginBottom="@dimen/margin"
+                android:buttonTint="@color/primaryTextColor"
+                android:text="@string/double_word"/>
+            <CheckBox
+                android:id="@+id/triple_letter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/text_style"
+                android:layout_marginBottom="@dimen/margin"
+                android:buttonTint="@color/primaryTextColor"
+                android:onClick="toggleLetterScore"
+                android:layout_weight="1"
+                android:text="@string/triple_letter"/>
+            <EditText
+                android:id="@+id/double_letter_entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:inputType="number"
+                android:hint="@string/letter_number"
+                android:textColor="@color/primaryTextColor"
+                android:textColorHint="@color/primaryTextColor"
+                android:textSize="@dimen/text_size"/>
+            <CheckBox
+                android:id="@+id/double_letter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/text_style"
+                android:layout_marginBottom="@dimen/margin"
+                android:buttonTint="@color/primaryTextColor"
+                android:layout_weight="1"
+                android:onClick="toggleLetterScore"
+                android:text="@string/double_letter"/>
+
+            <EditText
+                android:id="@+id/triple_letter_entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:hint="@string/letter_number"
+                android:inputType="number"
+                android:textColorHint="@color/primaryTextColor"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/text_size"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/submit"
@@ -177,7 +244,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@id/score_entry_layout"
+            android:layout_below="@id/special_score_boxes"
             android:layout_marginEnd="@dimen/margin"
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginRight="@dimen/margin"
@@ -194,7 +261,7 @@
             android:id="@+id/pass_player_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/score_entry_layout"
+            android:layout_below="@id/special_score_boxes"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="@dimen/margin"
             android:layout_marginRight="@dimen/margin"
@@ -212,7 +279,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/score_entry_layout"
+            android:layout_below="@id/special_score_boxes"
             android:layout_marginRight="@dimen/margin"
             android:layout_marginTop="@dimen/button_margin"
             android:background="@color/secondaryDarkColor"

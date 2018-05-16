@@ -4,10 +4,10 @@
     <string name="player1">Player 1</string>
     <string name="player2">Player 2</string>
     <string name="score">0</string>
-    <string name="enter_score">Enter Score</string>
+    <string name="enter_score">Word Played</string>
     <string name ="reset">Reset</string>
     <string name="dictionary">Look up a word</string>
-    <string name="tile_text_entry">Number of tiles used</string>
+    <string name="tile_text_entry">Tiles Used</string>
     <string name="tiles_left">86</string>
     <string name="tiles_left_heading">Remaining Tiles</string>
     <string name="turn">Player One\'s Turn</string>
@@ -15,4 +15,12 @@
     <string name="pass">Pass</string>
     <string name="increment">+</string>
     <string name="decrement">-</string>
+    <string name="word_entry_error">Please make sure you have entered a word to be scored.</string>
+    <string name="tiles_entry_error">Please enter a number between 1 and 7.</string>
+    <string name="triple_word">TW</string>
+    <string name="double_word">DW</string>
+    <string name="double_letter">DL</string>
+    <string name="triple_letter">TL</string>
+    <string name="letter_number">Place in word</string>
+    <string name="error2">Please recount the place in the word of the letter that is on a bonus space.</string>
 </resources>
